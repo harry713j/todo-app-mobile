@@ -1,11 +1,12 @@
-package org.harry;
+package org.harry.todo;
 
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class App {
 
     public static void main(String[] args) {
-        System.out.println("Hello there");
+        SpringApplication.run(App.class, args);
     }
 }
