@@ -42,6 +42,7 @@ dependencies {
 
     // Spring Boot Devtool
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
 }
 
 // Apply a specific Java toolchain to ease working on different environments.

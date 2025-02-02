@@ -10,6 +10,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.List;
 
 
 @Entity
@@ -40,4 +41,7 @@ public class User {
     private String name;
     @Column(name = "date_of_birth")
     private LocalDate dateOfBirth;
+
+    @OneToMany(mappedBy = "user")
+    private List<Task> tasks;
 }

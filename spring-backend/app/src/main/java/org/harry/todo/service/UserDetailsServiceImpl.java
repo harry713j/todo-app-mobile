@@ -4,7 +4,6 @@ import lombok.Data;
 import org.harry.todo.dto.request.UserDTO;
 import org.harry.todo.dto.response.UserResponseDTO;
 import org.harry.todo.entities.CustomUserDetails;
-import org.harry.todo.entities.RefreshToken;
 import org.harry.todo.entities.User;
 import org.harry.todo.repository.UserRepository;
 import org.harry.todo.util.ValidationUtil;
@@ -57,16 +56,16 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     public Boolean signupUser(UserDTO userDTO) {
         // validate the username, password & email
-        if (!ValidationUtil.validateUsername(userDTO.getUsername()) ||
-                !ValidationUtil.validatePassword(userDTO.getPassword()) ||
+        if (ValidationUtil.validateUsername(userDTO.getUsername()) ||
+                ValidationUtil.validatePassword(userDTO.getPassword()) ||
                 !ValidationUtil.validateEmail(userDTO.getEmail())) {
 
-            if (!ValidationUtil.validateUsername(userDTO.getUsername())) {
+            if (ValidationUtil.validateUsername(userDTO.getUsername())) {
                 System.err.println("Username must be at least 4 characters long and contain " +
                         "alphabets & numbers");
             }
 
-            if (!ValidationUtil.validatePassword(userDTO.getPassword())) {
+            if (ValidationUtil.validatePassword(userDTO.getPassword())) {
                 System.err.println("Password must be 8 characters long and contain alphabets, number & symbols");
             }
 

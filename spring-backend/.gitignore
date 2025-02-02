@@ -5,5 +5,7 @@
 build
 
 # application.properties
-**/application.properties
-application.properties
+**/application-local.properties
+application-local.properties
+
+app/.env
