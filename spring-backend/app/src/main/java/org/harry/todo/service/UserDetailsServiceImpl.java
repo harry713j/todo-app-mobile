@@ -60,19 +60,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
                 ValidationUtil.validatePassword(userDTO.getPassword()) ||
                 !ValidationUtil.validateEmail(userDTO.getEmail())) {
 
-            if (ValidationUtil.validateUsername(userDTO.getUsername())) {
-                System.err.println("Username must be at least 4 characters long and contain " +
-                        "alphabets & numbers");
-            }
-
-            if (ValidationUtil.validatePassword(userDTO.getPassword())) {
-                System.err.println("Password must be 8 characters long and contain alphabets, number & symbols");
-            }
-
-            if (!ValidationUtil.validateEmail(userDTO.getEmail())) {
-                System.err.println("Please provide a valid email");
-            }
-
             return false;
         }
 
